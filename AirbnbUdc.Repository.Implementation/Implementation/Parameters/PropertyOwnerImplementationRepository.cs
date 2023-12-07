@@ -1,0 +1,105 @@
+﻿using AirbnbUdc.Repository.Contracts.Contracts.Parameters;
+using AirbnbUdc.Repository.Contracts.DbModel.Parameters;
+using AirbnbUdc.Repository.Implementation.DataModel;
+using AirbnbUdc.Repository.Implementation.Mappers.Parameters;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+
+namespace AirbnbUdc.Repository.Implementation.Implementation.Parameters
+{
+    public class PropertyOwnerImplementationRepository : IPropertyOwnerRepository
+    {
+        public PropertyOwnerDbModel CreateRecord(PropertyOwnerDbModel record)
+        {
+            try
+            {
+                using (Core_DBEntities db = new Core_DBEntities())
+                {
+                    if (!db.PropertyOwner.Any(x => x.FirstName.Equals(record.FirstName)))
+                    {
+                        PropertyOwnerMapperRepository mapper = new PropertyOwnerMapperRepository();
+                        PropertyOwner dbRecord = mapper.MapperT2toT1(record);
+                        db.PropertyOwner.Add(dbRecord);
+                        db.SaveChanges();
+                        record.Id = (int)dbRecord.Id;
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                throw e;
+            }
+            return record;
+        }
+
+        public int DeleteRecord(int recordId)
+        {
+            try
+            {
+                using (Core_DBEntities db = new Core_DBEntities())
+                {
+                    PropertyOwner record = db.PropertyOwner.FirstOrDefault(x => x.Id == recordId);
+                    if (record != null)
+                    {
+                        db.PropertyOwner.Remove(record);
+                        db.SaveChanges();
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public IEnumerable<PropertyOwnerDbModel> GetAllRecords(string filter)
+        {
+            using (Core_DBEntities db = new Core_DBEntities())
+            {
+                var records = (
+                    from po in db.PropertyOwner
+                    where po.FirstName.Contains(filter)
+                    select po
+                    );
+                PropertyOwnerMapperRepository mapper = new PropertyOwnerMapperRepository();
+                return mapper.MapperT1toT2(records);
+            }
+        }
+
+        public PropertyOwnerDbModel GetRecord(int recordId)
+        {
+            using (Core_DBEntities db = new Core_DBEntities())
+            {
+                var record = db.PropertyOwner.Find(recordId);
+
+                PropertyOwnerMapperRepository mapper = new PropertyOwnerMapperRepository();
+                return mapper.MapperT1toT2(record);
+            }
+        }
+
+        public int UpdateRecord(PropertyOwnerDbModel record)
+        {
+            try
+            {
+                using (Core_DBEntities db = new Core_DBEntities())
+                {
+                    PropertyOwnerMapperRepository mapper = new PropertyOwnerMapperRepository();
+                    PropertyOwner dbRecord = mapper.MapperT2toT1(record);
+                    db.PropertyOwner.Attach(dbRecord);
+                    db.Entry(dbRecord).State = EntityState.Modified;
+                    return db.SaveChanges();
+                }
+            }
+            catch (System.Exception e)
+            {
+                throw e;
+            }
+        }
+    }
+}
