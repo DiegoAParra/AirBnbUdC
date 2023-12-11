@@ -9,15 +9,7 @@ namespace AirbnbUdc.Application.Implementation.Mappers.Paremeters
         public override CityDTO MapperT1toT2(CityDbModel input)
         {
             CountryMapperApplication countryMapper = new CountryMapperApplication();
-            if (input.Country == null)
-            {
-                return new CityDTO
-                {
-                    Id = input.Id,
-                    Name = input.Name,
-                    Country = null
-                };
-            }
+
             return new CityDTO
             {
                 Id = input.Id,
@@ -37,16 +29,6 @@ namespace AirbnbUdc.Application.Implementation.Mappers.Paremeters
         public override CityDbModel MapperT2toT1(CityDTO input)
         {
             CountryMapperApplication countryMapper = new CountryMapperApplication();
-
-            if (input.Country == null)
-            {
-                return new CityDbModel
-                {
-                    Id = input.Id,
-                    Name = input.Name,
-                    Country = null
-                };
-            }
 
             return new CityDbModel
             {

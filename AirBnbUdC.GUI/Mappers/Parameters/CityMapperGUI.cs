@@ -29,17 +29,6 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
         public override CityDTO MapperT2toT1(CityModel input)
         {
             CountryMapperGUI countryMapper = new CountryMapperGUI();
-
-            if (input.Country == null)
-            {
-                return new CityDTO
-                {
-                    Id = input.Id,
-                    Name = input.Name,
-                    Country = null
-                };
-            }
-
             return new CityDTO
             {
                 Id = input.Id,

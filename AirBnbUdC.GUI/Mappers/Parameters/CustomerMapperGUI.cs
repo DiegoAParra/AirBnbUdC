@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace AirBnbUdC.GUI.Mappers.Parameters
 {
-    public class PropertyOwnerMapperGUI : MapperBaseGUI<PropertyOwnerDTO, PropertyOwnerModel>
+    public class CustomerMapperGUI : MapperBaseGUI<CustomerDTO, CustomerModel>
     {
-        public override PropertyOwnerModel MapperT1toT2(PropertyOwnerDTO input)
+        public override CustomerModel MapperT1toT2(CustomerDTO input)
         {
-            return new PropertyOwnerModel
+            return new CustomerModel
             {
                 Id = input.Id,
                 FirstName = input.FirstName,
@@ -19,7 +19,7 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             };
         }
 
-        public override IEnumerable<PropertyOwnerModel> MapperT1toT2(IEnumerable<PropertyOwnerDTO> input)
+        public override IEnumerable<CustomerModel> MapperT1toT2(IEnumerable<CustomerDTO> input)
         {
             foreach (var item in input)
             {
@@ -27,9 +27,9 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             }
         }
 
-        public override PropertyOwnerDTO MapperT2toT1(PropertyOwnerModel input)
+        public override CustomerDTO MapperT2toT1(CustomerModel input)
         {
-            return new PropertyOwnerDTO
+            return new CustomerDTO
             {
                 Id = input.Id,
                 FirstName = input.FirstName,
@@ -40,7 +40,7 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             };
         }
 
-        public override IEnumerable<PropertyOwnerDTO> MapperT2toT1(IEnumerable<PropertyOwnerModel> input)
+        public override IEnumerable<CustomerDTO> MapperT2toT1(IEnumerable<CustomerModel> input)
         {
             foreach (var item in input)
             {

@@ -1,14 +1,14 @@
-﻿using AirbnbUdC.Application.Contracts.DTO.Parameters;
-using AirBnbUdC.GUI.Models.Parameters;
+﻿using AirbnbUdc.Repository.Contracts.DbModel.Parameters;
+using AirbnbUdC.Application.Contracts.DTO.Parameters;
 using System.Collections.Generic;
 
-namespace AirBnbUdC.GUI.Mappers.Parameters
+namespace AirbnbUdc.Application.Implementation.Mappers.Paremeters
 {
-    public class PropertyOwnerMapperGUI : MapperBaseGUI<PropertyOwnerDTO, PropertyOwnerModel>
+    public class CustomerMapperApplication : MapperBaseApplication<CustomerDbModel, CustomerDTO>
     {
-        public override PropertyOwnerModel MapperT1toT2(PropertyOwnerDTO input)
+        public override CustomerDTO MapperT1toT2(CustomerDbModel input)
         {
-            return new PropertyOwnerModel
+            return new CustomerDTO
             {
                 Id = input.Id,
                 FirstName = input.FirstName,
@@ -19,7 +19,7 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             };
         }
 
-        public override IEnumerable<PropertyOwnerModel> MapperT1toT2(IEnumerable<PropertyOwnerDTO> input)
+        public override IEnumerable<CustomerDTO> MapperT1toT2(IEnumerable<CustomerDbModel> input)
         {
             foreach (var item in input)
             {
@@ -27,9 +27,9 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             }
         }
 
-        public override PropertyOwnerDTO MapperT2toT1(PropertyOwnerModel input)
+        public override CustomerDbModel MapperT2toT1(CustomerDTO input)
         {
-            return new PropertyOwnerDTO
+            return new CustomerDbModel
             {
                 Id = input.Id,
                 FirstName = input.FirstName,
@@ -40,7 +40,7 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
             };
         }
 
-        public override IEnumerable<PropertyOwnerDTO> MapperT2toT1(IEnumerable<PropertyOwnerModel> input)
+        public override IEnumerable<CustomerDbModel> MapperT2toT1(IEnumerable<CustomerDTO> input)
         {
             foreach (var item in input)
             {

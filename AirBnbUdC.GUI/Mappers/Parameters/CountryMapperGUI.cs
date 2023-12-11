@@ -8,6 +8,10 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
     {
         public override CountryModel MapperT1toT2(CountryDTO input)
         {
+            if (input == null)
+            {
+                return new CountryModel();
+            }
             return new CountryModel
             {
                 Id = input.Id,
@@ -25,6 +29,10 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
 
         public override CountryDTO MapperT2toT1(CountryModel input)
         {
+            if(input == null)
+            {
+                return new CountryDTO();
+            }
             return new CountryDTO
             {
                 Id = input.Id,

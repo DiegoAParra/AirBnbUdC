@@ -93,8 +93,9 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] CityModel cityModel)
+        public ActionResult Edit(CityModel cityModel)
         {
+            ModelState.Remove("Country.Name");
             if (ModelState.IsValid)
             {
                 CityDTO cityDTO = mapper.MapperT2toT1(cityModel);
@@ -127,7 +128,6 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
             app.DeleteRecord(id);
             return RedirectToAction("Index");
         }
-
 
         public ActionResult GenerateReport(string format = "PDF")
         {
@@ -175,6 +175,5 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 
             return File(renderedBytes, mimeType);
         }
-
     }
 }

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - AirBnb</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -21,13 +21,14 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <!--
-    <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-    <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-    -->
+                    <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    -->
                     <li>@Html.ActionLink("País", "Index", "Country", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Ciudad", "Index", "Cities", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Propietario", "Index", "PropertyOwner", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Propiedades", "Index", "Property", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Propiedad", "Index", "Property", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Cliente", "Index", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -37,7 +38,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - U de Caldas</p>
         </footer>
     </div>
 

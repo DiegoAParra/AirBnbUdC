@@ -3,6 +3,9 @@ using AirbnbUdC.Application.Contracts.Contracts.Parameters;
 using AirbnbUdC.Application.Contracts.DTO.Parameters;
 using AirBnbUdC.GUI.Mappers.Parameters;
 using AirBnbUdC.GUI.Models.Parameters;
+using AirBnbUdC.GUI.Models.ReportModels;
+using Microsoft.Reporting.WebForms;
+using System.Collections.Generic;
 using System.Net;
 using System.Web.Mvc;
 
@@ -98,8 +101,15 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PropertyAddress,CustomerAmount,Price,Latitude,Longitude,CheckinData,CheckoutData,Details,Pets,Freezer,LaundryService")] PropertyModel propertyModel)
+        public ActionResult Edit(PropertyModel propertyModel)
         {
+            ModelState.Remove("City.Name");
+            ModelState.Remove("City.Country");
+            ModelState.Remove("PropertyOwner.FirstName");
+            ModelState.Remove("PropertyOwner.FamilyName");
+            ModelState.Remove("PropertyOwner.Email");
+            ModelState.Remove("PropertyOwner.Cellphone");
+            ModelState.Remove("PropertyOwner.Photo");
             if (ModelState.IsValid)
             {
                 PropertyDTO propertyDTO = mapper.MapperT2toT1(propertyModel);
@@ -131,6 +141,66 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
         {
             app.DeleteRecord(id);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult GenerateReport(string format = "PDF")
+        {
+            var list = app.GetAllRecords(string.Empty);
+            PropertyMapperGUI propertyMapperGUI = new PropertyMapperGUI();
+            List<PropertiesByCityReportModel> recordsList = new List<PropertiesByCityReportModel>();
+
+            foreach (var property in list)
+            {
+                recordsList.Add(
+                    new PropertiesByCityReportModel()
+                    {
+                        Id = property.Id.ToString(),
+                        PropertyAddress = property.PropertyAddress,
+                        CityId = property.City.Id.ToString(),
+                        CustomerAmount = property.CustomerAmount.ToString(),
+                        Price = property.Price.ToString(),
+                        Latitude = property.Latitude,
+                        Longitude = property.Longitude,
+                        PropertyOwnerId = property.PropertyOwner.Id.ToString(),
+                        CheckinData = property.CheckinData.ToString(),
+                        CheckoutData = property.CheckoutData.ToString(),
+                        Details = property.Details,
+                        Pets = property.Pets.ToString(),
+                        Freezer = property.Freezer.ToString(),
+                        LaundryService = property.LaundryService.ToString(),
+                        CityName = property.City.Name,
+                        PropertyOwnerFirstName = property.PropertyOwner.FirstName,
+                        PropertyOwnerFamilyName = property.PropertyOwner.FamilyName
+                    });
+            }
+
+            string reportPath = Server.MapPath("~/Reports/RdlcFiles/PropertiesByCityReport.rdlc");
+            //List<string> dataSets = new List<string> { "CustomerList" };
+            LocalReport lr = new LocalReport();
+
+            lr.ReportPath = reportPath;
+            lr.EnableHyperlinks = true;
+
+            Warning[] warnings;
+            string[] streams;
+            byte[] renderedBytes;
+            string mimeType, encoding, fileNameExtension;
+
+            ReportDataSource datasource = new ReportDataSource("PropertiesByCityDataSet", recordsList);
+            lr.DataSources.Add(datasource);
+
+
+            renderedBytes = lr.Render(
+            format,
+            string.Empty,
+            out mimeType,
+            out encoding,
+            out fileNameExtension,
+            out streams,
+            out warnings
+            );
+
+            return File(renderedBytes, mimeType);
         }
     }
 }

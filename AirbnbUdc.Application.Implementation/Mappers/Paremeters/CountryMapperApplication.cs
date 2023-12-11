@@ -8,6 +8,10 @@ namespace AirbnbUdc.Application.Implementation.Mappers.Paremeters
     {
         public override CountryDTO MapperT1toT2(CountryDbModel input)
         {
+            if (input == null)
+            {
+                return new CountryDTO();
+            }
             return new CountryDTO
             {
                 Id = input.Id,
@@ -25,6 +29,10 @@ namespace AirbnbUdc.Application.Implementation.Mappers.Paremeters
 
         public override CountryDbModel MapperT2toT1(CountryDTO input)
         {
+            if (input == null)
+            {
+                return new CountryDbModel();
+            }
             return new CountryDbModel
             {
                 Id = input.Id,
