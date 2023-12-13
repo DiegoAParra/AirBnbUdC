@@ -225,7 +225,9 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Parameters\CitiesController.cs" />
     <Compile Include="Controllers\Parameters\CountryController.cs" />
+    <Compile Include="Controllers\Parameters\MultimediaTypeController.cs" />
     <Compile Include="Controllers\Parameters\PropertyController.cs" />
+    <Compile Include="Controllers\Parameters\PropertyMultimediaController.cs" />
     <Compile Include="Controllers\Parameters\PropertyOwnerController.cs" />
     <Compile Include="Data\AirBnbUdCGUIContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,7 +235,9 @@
     </Compile>
     <Compile Include="Mappers\MapperBaseGUI.cs" />
     <Compile Include="Mappers\Parameters\CountryMapperGUI.cs" />
+    <Compile Include="Mappers\Parameters\MultimediaTypeMapperGUI.cs" />
     <Compile Include="Mappers\Parameters\CityMapperGUI.cs" />
+    <Compile Include="Mappers\Parameters\PropertyMultimediaMapperGUI.cs" />
     <Compile Include="Mappers\Parameters\PropertyMapperGUI.cs" />
     <Compile Include="Mappers\Parameters\CustomerMapperGUI.cs" />
     <Compile Include="Mappers\Parameters\PropertyOwnerMapperGUI.cs" />
@@ -241,8 +245,10 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Parameters\CityModel.cs" />
+    <Compile Include="Models\Parameters\MultimediaTypeModel.cs" />
     <Compile Include="Models\Parameters\CustomerModel.cs" />
     <Compile Include="Models\Parameters\CountryModel.cs" />
+    <Compile Include="Models\Parameters\PropertyMultimediaModel.cs" />
     <Compile Include="Models\Parameters\PropertyModel.cs" />
     <Compile Include="Models\Parameters\PropertyOwnerModel.cs" />
     <Compile Include="Models\ReportModels\PropertiesByCityReportModel.cs" />
@@ -380,6 +386,16 @@
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\MultimediaType\Create.cshtml" />
+    <Content Include="Views\MultimediaType\Delete.cshtml" />
+    <Content Include="Views\MultimediaType\Details.cshtml" />
+    <Content Include="Views\MultimediaType\Edit.cshtml" />
+    <Content Include="Views\MultimediaType\Index.cshtml" />
+    <Content Include="Views\PropertyMultimedia\Create.cshtml" />
+    <Content Include="Views\PropertyMultimedia\Delete.cshtml" />
+    <Content Include="Views\PropertyMultimedia\Details.cshtml" />
+    <Content Include="Views\PropertyMultimedia\Edit.cshtml" />
+    <Content Include="Views\PropertyMultimedia\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

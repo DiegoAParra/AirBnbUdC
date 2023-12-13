@@ -20,15 +20,12 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <!--
-                    <li>@Html.ActionLink("Acerca de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    -->
                     <li>@Html.ActionLink("País", "Index", "Country", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Ciudad", "Index", "Cities", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Propietario", "Index", "PropertyOwner", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Propiedad", "Index", "Property", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Tipo Multimedia", "Index", "MultimediaType", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Multimedia", "Index", "PropertyMultimedia", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Cliente", "Index", "Customer", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")

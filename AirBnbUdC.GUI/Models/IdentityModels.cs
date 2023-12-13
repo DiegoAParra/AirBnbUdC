@@ -42,5 +42,9 @@ namespace AirBnbUdC.GUI.Models
         public System.Data.Entity.DbSet<AirbnbUdC.Application.Contracts.DTO.Parameters.PropertyDTO> PropertyDTOes { get; set; }
 
         public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.CustomerModel> CustomerModels { get; set; }
+
+        public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.MultimediaTypeModel> MultimediaTypeModels { get; set; }
+
+        public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.PropertyMultimediaModel> PropertyMultimediaModels { get; set; }
     }
 }

@@ -28,6 +28,10 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
 
         public override CityDTO MapperT2toT1(CityModel input)
         {
+            if (input == null)
+            {
+                return new CityDTO();
+            }
             CountryMapperGUI countryMapper = new CountryMapperGUI();
             return new CityDTO
             {

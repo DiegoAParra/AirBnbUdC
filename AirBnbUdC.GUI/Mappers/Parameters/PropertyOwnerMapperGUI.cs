@@ -29,6 +29,10 @@ namespace AirBnbUdC.GUI.Mappers.Parameters
 
         public override PropertyOwnerDTO MapperT2toT1(PropertyOwnerModel input)
         {
+            if (input == null)
+            {
+                return new PropertyOwnerDTO();
+            }
             return new PropertyOwnerDTO
             {
                 Id = input.Id,
