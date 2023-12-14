@@ -7,12 +7,12 @@
 <h2>Multimedia de Propiedad</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @Class = "btn btn-primary mt-5 mb-3" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MultimediaName)
+            @Html.DisplayNameFor(model => model.Id)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.MultimediaLink)
@@ -21,7 +21,7 @@
             @Html.DisplayNameFor(model => model.Property.PropertyAddress)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MultimediaType.MultimediaTypeName)
+            @Html.DisplayNameFor(model => model.MultimediaType.Id)
         </th>
         <th></th>
     </tr>
@@ -41,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.MultimediaType.MultimediaTypeName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn-warning" }) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn btn-secondary" }) |
             @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @Class = "btn btn-info" }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @Class = "btn btn-danger" })
         </td>

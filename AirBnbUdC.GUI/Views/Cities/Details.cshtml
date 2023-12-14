@@ -7,18 +7,17 @@
 <h2>Details</h2>
 
 <div>
-    <h4>CityModel</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Id)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.Country.Name)
+            @Html.DisplayNameFor(model => model.Country.Id)
         </dt>
 
         <dd>
@@ -28,6 +27,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @Class = "btn btn-secondary" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @Class = "btn btn-primary " })
 </p>
