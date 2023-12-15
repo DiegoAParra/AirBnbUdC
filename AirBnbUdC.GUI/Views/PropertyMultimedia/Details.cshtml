@@ -1,10 +1,10 @@
 ﻿@model AirBnbUdC.GUI.Models.Parameters.PropertyMultimediaModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
     <hr />
@@ -44,6 +44,6 @@
     </dl>
 </div>
 <p class="mt-5">
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @Class = "btn btn-secondary" }) |
-    @Html.ActionLink("Back to List", "Index", null, new { @Class = "btn btn-primary " })
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @Class = "btn btn-secondary" }) |
+    @Html.ActionLink("Volver", "Index", null, new { @Class = "btn btn-primary " })
 </p>

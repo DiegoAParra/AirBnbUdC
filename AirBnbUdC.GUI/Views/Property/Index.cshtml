@@ -8,7 +8,7 @@
 <br />
 <a target="_blank" href="/Property/GenerateReport?format=PDF" class="btn btn-success">Generar Reporte<i class="fas fa-file"></i></a>
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @Class = "btn btn-primary mt-5 mb-3" })
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @Class = "btn btn-primary mt-5 mb-3" })
 </p>
 
 <div class="row">
@@ -21,21 +21,21 @@
                     <p class="card-text"><strong>Capacidad :</strong> @Html.DisplayFor(modelItem => item.CustomerAmount) Personas</p>
                     <p class="card-text"><strong>Precio:</strong> @Html.DisplayFor(modelItem => item.Price) $</p>
                     <p class="card-text"><strong>Coordenadas:</strong> @Html.DisplayFor(modelItem => item.Latitude), @Html.DisplayFor(modelItem => item.Longitude)</p>
-                    <p class="card-text"><strong>Property Owner:</strong> @Html.DisplayFor(modelItem => item.PropertyOwner.FirstName)  @Html.DisplayFor(modelItem => item.PropertyOwner.FamilyName)</p>
-                    <p class="card-text"><strong>Check-in Data:</strong> @Html.DisplayFor(modelItem => item.CheckinData)</p>
-                    <p class="card-text"><strong>Checkout Data:</strong> @Html.DisplayFor(modelItem => item.CheckoutData)</p>
-                    <p class="card-text"><strong>Details:</strong> @Html.DisplayFor(modelItem => item.Details)</p>
+                    <p class="card-text"><strong>Propietario:</strong> @Html.DisplayFor(modelItem => item.PropertyOwner.FirstName)  @Html.DisplayFor(modelItem => item.PropertyOwner.FamilyName)</p>
+                    <p class="card-text"><strong>Check-in:</strong> @Html.DisplayFor(modelItem => item.CheckinData)</p>
+                    <p class="card-text"><strong>Checkout:</strong> @Html.DisplayFor(modelItem => item.CheckoutData)</p>
+                    <p class="card-text"><strong>Detalles:</strong> @Html.DisplayFor(modelItem => item.Details)</p>
                     <p class="card-text">
-                        <strong>Pets:</strong> @Html.DisplayFor(modelItem => item.Pets)
+                        <strong>Macotas:</strong> @Html.DisplayFor(modelItem => item.Pets)
                         <span class="mx-2"></span>
-                        <strong>Freezer:</strong> @Html.DisplayFor(modelItem => item.Freezer)
+                        <strong>Nevera:</strong> @Html.DisplayFor(modelItem => item.Freezer)
                         <span class="mx-2"></span>
-                        <strong>Laundry Service:</strong> @Html.DisplayFor(modelItem => item.LaundryService)
+                        <strong>Lavanderia:</strong> @Html.DisplayFor(modelItem => item.LaundryService)
                     </p>
                     <div>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @Class = "btn btn-secondary mb-2" }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @Class = "btn btn-info mb-2" }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @Class = "btn btn-danger mb-2" })
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @Class = "btn btn-secondary mb-2" }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @Class = "btn btn-info mb-2" }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @Class = "btn btn-danger mb-2" })
                     </div>
                 </div>
             </div>

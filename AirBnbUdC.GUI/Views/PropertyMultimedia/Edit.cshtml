@@ -1,10 +1,10 @@
 ﻿@model AirBnbUdC.GUI.Models.Parameters.PropertyMultimediaModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<h2>Editar</h2>
 
 @using (Html.BeginForm())
 {
@@ -49,12 +49,12 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-success mt-3" />
+            <input type="submit" value="Guardar" class="btn btn-success mt-3" />
         </div>
     </div>
 </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index", null, new { @Class = "btn btn-primary mt-5 mb-3" })
+    @Html.ActionLink("Volver", "Index", null, new { @Class = "btn btn-primary mt-5 mb-3" })
 </div>

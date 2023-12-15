@@ -42,14 +42,14 @@ namespace AirBnbUdC.GUI.Models.Parameters
 
         public IEnumerable<PropertyOwnerModel> PropertyOwnerList { get; set; }
 
-        [DisplayName("Fecha Inicio")]
-        [Required(ErrorMessage = "La fecha de inicio es requerido")]
-        [StringLength(50, ErrorMessage = "La fecha de inicio debe tener entre 1 y 50 caracteres", MinimumLength = 1)]
+        [DisplayName("Checkin")]
+        [Required(ErrorMessage = "El Checkin es requerido")]
+        [StringLength(50, ErrorMessage = "El Checkin debe tener entre 1 y 50 caracteres", MinimumLength = 1)]
         public string CheckinData { get; set; }
 
-        [DisplayName("Fecha Salida")]
-        [Required(ErrorMessage = "La fecha de salida es requerido")]
-        [StringLength(50, ErrorMessage = "La fecha de salida debe tener entre 1 y 50 caracteres", MinimumLength = 1)]
+        [DisplayName("Checkout")]
+        [Required(ErrorMessage = "El Checkout es requerido")]
+        [StringLength(50, ErrorMessage = "El Checkout debe tener entre 1 y 50 caracteres", MinimumLength = 1)]
         public string CheckoutData { get; set; }
 
         [DisplayName("Detalles")]

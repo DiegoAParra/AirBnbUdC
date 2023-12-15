@@ -30,7 +30,6 @@ namespace AirBnbUdC.GUI.Models.Parameters
 
         [DisplayName("Foto")]
         [Required(ErrorMessage = "La foto es requerido")]
-        [StringLength(50, ErrorMessage = "La foto debe tener entre 1 y 50 caracteres", MinimumLength = 1)]
         public string Photo { get; set; }
     }
 }

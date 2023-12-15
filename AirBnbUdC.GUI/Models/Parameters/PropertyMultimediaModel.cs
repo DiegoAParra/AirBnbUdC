@@ -6,11 +6,11 @@ namespace AirBnbUdC.GUI.Models.Parameters
 {
     public class PropertyMultimediaModel
     {
-        [DisplayName("Multimedia Propiedad")]
+        [DisplayName("Multimedia")]
         public int Id { get; set; }
 
-        [DisplayName("Nombre (Númerico)")]
-        [Required(ErrorMessage = "El nombre es requerido")]
+        [DisplayName("Identificador")]
+        [Required(ErrorMessage = "El identificador es requerido")]
         public int MultimediaName { get; set; }
 
         [DisplayName("Link")]

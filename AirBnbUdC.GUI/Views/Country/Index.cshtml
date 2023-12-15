@@ -7,7 +7,7 @@
 <h2>Paises</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create", null, new { @Class = "btn btn-primary mt-5 mb-3" })
+    @Html.ActionLink("Crear Nuevo", "Create", null, new { @Class = "btn btn-primary mt-5 mb-3" })
 </p>
 <table class="table">
     <tr>
@@ -23,9 +23,9 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id}, new { @Class = "btn btn-secondary" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }, new { @Class = "btn btn-info" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id }, new { @Class = "btn btn-danger" })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id}, new { @Class = "btn btn-secondary" }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }, new { @Class = "btn btn-info" }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id }, new { @Class = "btn btn-danger" })
         </td>
     </tr>
 }

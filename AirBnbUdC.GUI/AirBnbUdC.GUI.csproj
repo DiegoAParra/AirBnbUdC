@@ -251,8 +251,8 @@
     <Compile Include="Models\Parameters\PropertyMultimediaModel.cs" />
     <Compile Include="Models\Parameters\PropertyModel.cs" />
     <Compile Include="Models\Parameters\PropertyOwnerModel.cs" />
-    <Compile Include="Models\ReportModels\PropertiesByCityReportModel.cs" />
     <Compile Include="Models\ReportModels\CitiesByCountryReportModel.cs" />
+    <Compile Include="Models\ReportModels\PropertiesByCityReportModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\Datasets\CitiesByCountryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
