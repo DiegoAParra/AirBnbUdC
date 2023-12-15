@@ -1,5 +1,4 @@
-﻿using AirbnbUdc.Application.Implementation.Implementation.Parameters;
-using AirbnbUdC.Application.Contracts.Contracts.Parameters;
+﻿using AirbnbUdC.Application.Contracts.Contracts.Parameters;
 using AirbnbUdC.Application.Contracts.DTO.Parameters;
 using AirBnbUdC.GUI.Mappers.Parameters;
 using AirBnbUdC.GUI.Models.Parameters;

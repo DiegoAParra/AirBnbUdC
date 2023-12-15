@@ -46,5 +46,7 @@ namespace AirBnbUdC.GUI.Models
         public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.MultimediaTypeModel> MultimediaTypeModels { get; set; }
 
         public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.PropertyMultimediaModel> PropertyMultimediaModels { get; set; }
+
+        public System.Data.Entity.DbSet<AirBnbUdC.GUI.Models.Parameters.HomePropertyModel> HomePropertyModels { get; set; }
     }
 }

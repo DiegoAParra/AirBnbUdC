@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AirBnbUdC.GUI.Models.Parameters.HomePropertyModel>
+
+<main>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">AirBnb</h1>
+            <p class="lead text-muted">Pertenece a cualquier lugar</p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-4 box-shadow">
+                            <div id="carousel-@item.Id" class="carousel slide" data-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach (var multimediaLink in item.MultimediaLinks)
+                                    {
+                                        <div class="carousel-item @(multimediaLink == item.MultimediaLinks.First() ? "active" : "")">
+                                            <img class="d-block w-100" src="@multimediaLink" alt="Imagen Propiedad">
+                                        </div>
+                                    }
+                                </div>
+                                <a class="carousel-control-prev" href="#carousel-@item.Id" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </a>
+                                <a class="carousel-control-next" href="#carousel-@item.Id" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.CityName)</h5>
+                                <p class="card-text">
+                                    <strong>Dirección:</strong> @Html.DisplayFor(modelItem => item.PropertyAddress) <br>
+                                    <strong>Capacidad:</strong> @Html.DisplayFor(modelItem => item.CustomerAmount)
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        @Html.ActionLink("Detalles", "Details", "Property", new { id = item.Id }, new { @Class = "btn btn-sm btn-outline-secondary" })
+                                    </div>
+                                    <small class="text-dark font-weight-bold" style="font-size: 1.5em; color: navy;">
+                                        $@Html.DisplayFor(modelItem => item.Price)
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+@section Scripts {
+    <script>
+        // Desactivar el desplazamiento automático del carrusel
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                interval: false
+            });
+
+            // Manejar la navegación manual al hacer clic en los botones "Next" y "Previous"
+            $('.carousel-control-prev').on('click', function () {
+                $(this).closest('.carousel').carousel('prev');
+            });
+
+            $('.carousel-control-next').on('click', function () {
+                $(this).closest('.carousel').carousel('next');
+            });
+        });
+    </script>
+}

@@ -2,8 +2,6 @@
 
 namespace AirBnbUdC.GUI.App_Start
 {
-    using System.Reflection;
-    using System.Web.Mvc;
     using AirbnbUdc.Application.Implementation.Implementation.Parameters;
     using AirbnbUdc.Repository.Contracts.Contracts.Parameters;
     using AirbnbUdc.Repository.Implementation.Implementation.Parameters;
@@ -11,7 +9,8 @@ namespace AirBnbUdC.GUI.App_Start
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-    
+    using System.Web.Mvc;
+
     public static class SimpleInjectorInitializer
     {
         /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>

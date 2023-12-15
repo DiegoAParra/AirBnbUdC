@@ -242,6 +242,7 @@
     <Compile Include="Controllers\Parameters\PropertyController.cs" />
     <Compile Include="Controllers\Parameters\PropertyMultimediaController.cs" />
     <Compile Include="Controllers\Parameters\PropertyOwnerController.cs" />
+    <Compile Include="Controllers\ViewsController\HomePropertyController.cs" />
     <Compile Include="Data\AirBnbUdCGUIContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -266,6 +267,7 @@
     <Compile Include="Models\Parameters\PropertyOwnerModel.cs" />
     <Compile Include="Models\ReportModels\CitiesByCountryReportModel.cs" />
     <Compile Include="Models\ReportModels\PropertiesByCityReportModel.cs" />
+    <Compile Include="Models\ViewsModels\HomePropertyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\Datasets\CitiesByCountryDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -409,6 +411,7 @@
     <Content Include="Views\PropertyMultimedia\Details.cshtml" />
     <Content Include="Views\PropertyMultimedia\Edit.cshtml" />
     <Content Include="Views\PropertyMultimedia\Index.cshtml" />
+    <Content Include="Views\HomeProperty\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
