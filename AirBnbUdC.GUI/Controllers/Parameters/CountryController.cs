@@ -10,7 +10,12 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class CountryController : Controller
     {
-        private ICountryApplication app = new CountryImplementationApplication();
+        private ICountryApplication app;
+
+        public CountryController(ICountryApplication CountryImplementationApp) 
+        {
+            this.app = CountryImplementationApp;
+        }
 
         CountryMapperGUI mapper = new CountryMapperGUI();
 

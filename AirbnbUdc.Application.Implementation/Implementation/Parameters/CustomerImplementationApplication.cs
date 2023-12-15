@@ -12,9 +12,9 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         ICustomerRepository _customerRepository;
 
-        public CustomerImplementationApplication()
+        public CustomerImplementationApplication(ICustomerRepository CustomerImplementationR)
         {
-            this._customerRepository = new CustomerImplementationRepository();
+            this._customerRepository = CustomerImplementationR;
         }
         public CustomerDTO CreateRecord(CustomerDTO record)
         {

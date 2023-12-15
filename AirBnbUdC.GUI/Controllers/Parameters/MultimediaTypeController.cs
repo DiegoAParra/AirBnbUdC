@@ -10,9 +10,14 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class MultimediaTypeController : Controller
     {
-        private IMultimediaTypeApplication app = new MultimediaTypeImplementationApplication();
+        private IMultimediaTypeApplication app;
 
         MultimediaTypeMapperGUI mapper = new MultimediaTypeMapperGUI();
+
+        public MultimediaTypeController(IMultimediaTypeApplication MultimediaTypeImplementationApp)
+        {
+            this.app = MultimediaTypeImplementationApp;
+        }
 
         // GET: MultimediaTypeModels
         public ActionResult Index(string filter = "")

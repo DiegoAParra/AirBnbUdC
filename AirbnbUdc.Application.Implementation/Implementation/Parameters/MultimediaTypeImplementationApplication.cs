@@ -12,8 +12,8 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         IMultimediaTypeRepository _multimediaTypeRepository;
 
-        public MultimediaTypeImplementationApplication() { 
-            this._multimediaTypeRepository = new MultimediaTypeImplementationRepository();
+        public MultimediaTypeImplementationApplication(IMultimediaTypeRepository MultimediaTypeImplementationR) { 
+            this._multimediaTypeRepository = MultimediaTypeImplementationR;
         }
 
         public MultimediaTypeDTO CreateRecord(MultimediaTypeDTO record)

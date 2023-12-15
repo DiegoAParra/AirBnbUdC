@@ -12,8 +12,8 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         ICountryRepository _countryRepository;
 
-        public CountryImplementationApplication() { 
-            this._countryRepository = new CountryImplementationRepository();
+        public CountryImplementationApplication(ICountryRepository CountryImplementationR) { 
+            this._countryRepository = CountryImplementationR;
         }
 
         public CountryDTO CreateRecord(CountryDTO record)

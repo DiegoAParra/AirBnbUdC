@@ -13,9 +13,16 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class PropertyController : Controller
     {
-        private IPropertyApplication app = new PropertyImplementationApplication();
-        private ICityApplication cityApp = new CityImplementationApplication();
-        private IPropertyOwnerApplication propertyOwnerApp = new PropertyOwnerImplementationApplication();
+        private IPropertyApplication app;
+        private ICityApplication cityApp;
+        private IPropertyOwnerApplication propertyOwnerApp;
+
+        public PropertyController(IPropertyApplication PropertyImplementationApp, ICityApplication CityImplementationApp, IPropertyOwnerApplication PropertyOwnerImplementationApp)
+        {
+            this.app = PropertyImplementationApp;
+            this.cityApp = CityImplementationApp;
+            this.propertyOwnerApp = PropertyOwnerImplementationApp;
+        }
 
         PropertyMapperGUI mapper = new PropertyMapperGUI();
         // GET: Property

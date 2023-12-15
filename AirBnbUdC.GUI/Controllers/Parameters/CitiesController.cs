@@ -13,10 +13,16 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class CitiesController : Controller
     {
-        private ICityApplication app = new CityImplementationApplication();
-        private ICountryApplication countryApp = new CountryImplementationApplication();
+        private ICityApplication app ;
+        private ICountryApplication countryApp;
 
         CityMapperGUI mapper = new CityMapperGUI();
+
+        public CitiesController(ICountryApplication CountryImplementationApp, ICityApplication CityImplementationApp)
+        {
+            this.countryApp = CountryImplementationApp;
+            this.app = CityImplementationApp;
+        }
 
         // GET: CityModels
         public ActionResult Index(string filter = "")

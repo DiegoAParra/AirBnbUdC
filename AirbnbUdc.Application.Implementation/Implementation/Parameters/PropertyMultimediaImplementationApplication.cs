@@ -12,9 +12,9 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         IPropertyMultimediaRepository _propertyMultimediaRepository;
 
-        public PropertyMultimediaImplementationApplication()
+        public PropertyMultimediaImplementationApplication(IPropertyMultimediaRepository PropertyMultimediaImplementationR)
         {
-            this._propertyMultimediaRepository = new PropertyMultimediaImplementationRepository();
+            this._propertyMultimediaRepository = PropertyMultimediaImplementationR;
         }
 
         public PropertyMultimediaDTO CreateRecord(PropertyMultimediaDTO record)
