@@ -10,9 +10,14 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class PropertyOwnerController : Controller
     {
-        private IPropertyOwnerApplication app = new PropertyOwnerImplementationApplication();
+        private IPropertyOwnerApplication app;
 
         PropertyOwnerMapperGUI mapper = new PropertyOwnerMapperGUI();
+
+        public PropertyOwnerController(IPropertyOwnerApplication PropertyOwnerImplementationApp)
+        {
+            this.app = PropertyOwnerImplementationApp;
+        }
 
         // GET: PropertyOwnerModels
         public ActionResult Index(string filter = "")

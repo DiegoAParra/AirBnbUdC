@@ -12,8 +12,8 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         ICityRepository _cityRepository;
 
-        public CityImplementationApplication() { 
-            this._cityRepository = new CityImplementationRepository();
+        public CityImplementationApplication(ICityRepository CityImplementationR) { 
+            this._cityRepository = CityImplementationR;
         }
 
         /// <summary>

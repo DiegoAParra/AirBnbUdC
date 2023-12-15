@@ -10,7 +10,12 @@ namespace AirBnbUdC.GUI.Controllers
 {
     public class CustomerController : Controller
     {
-        private ICustomerApplication app = new CustomerImplementationApplication();
+        private ICustomerApplication app;
+
+        public CustomerController(ICustomerApplication CustomerImplementationApp) 
+        {
+            this.app = CustomerImplementationApp;
+        }
 
         CustomerMapperGUI mapper = new CustomerMapperGUI();
 

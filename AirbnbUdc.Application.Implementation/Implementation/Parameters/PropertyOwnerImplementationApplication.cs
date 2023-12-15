@@ -12,9 +12,9 @@ namespace AirbnbUdc.Application.Implementation.Implementation.Parameters
     {
         IPropertyOwnerRepository _propertyOwnerRepository;
 
-        public PropertyOwnerImplementationApplication()
+        public PropertyOwnerImplementationApplication(IPropertyOwnerRepository PropertyOwnerImplementationR)
         {
-            this._propertyOwnerRepository = new PropertyOwnerImplementationRepository();
+            this._propertyOwnerRepository = PropertyOwnerImplementationR;
         }
         public PropertyOwnerDTO CreateRecord(PropertyOwnerDTO record)
         {

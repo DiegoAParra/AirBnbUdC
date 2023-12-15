@@ -22,11 +22,11 @@ namespace AirBnbUdC.GUI.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+        //public accountcontroller(applicationusermanager usermanager, applicationsigninmanager signinmanager)
+        //{
+        //    usermanager = usermanager;
+        //    signinmanager = signinmanager;
+        //}
 
         public ApplicationSignInManager SignInManager
         {

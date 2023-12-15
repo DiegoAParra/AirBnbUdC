@@ -10,11 +10,18 @@ namespace AirBnbUdC.GUI.Controllers.Parameters
 {
     public class PropertyMultimediaController : Controller
     {
-        private IPropertyMultimediaApplication app = new PropertyMultimediaImplementationApplication();
-        private IPropertyApplication propertyApp = new PropertyImplementationApplication();
-        private IMultimediaTypeApplication multimediaTypeApp = new MultimediaTypeImplementationApplication();
+        private IPropertyMultimediaApplication app;
+        private IPropertyApplication propertyApp;
+        private IMultimediaTypeApplication multimediaTypeApp;
 
         PropertyMultimediaMapperGUI mapper = new PropertyMultimediaMapperGUI();
+
+        public PropertyMultimediaController(IPropertyMultimediaApplication PropertyMultimediaImplementationApp, IPropertyApplication PropertyImplementationApp, IMultimediaTypeApplication MultimediaTypeImplementationApp)
+        {
+            this.app = PropertyMultimediaImplementationApp;
+            this.propertyApp = PropertyImplementationApp;
+            this.multimediaTypeApp = MultimediaTypeImplementationApp;
+        }
 
         // GET: PropertyMultimediaModels
         public ActionResult Index(string filter = "")
